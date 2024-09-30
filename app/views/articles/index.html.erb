@@ -11,7 +11,9 @@
         <div class="card m-lg-2 shadow bg-white rounded" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title"> <%= link_to article.title, article_path(article), class: "link-article" %> </h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary fst-italic">Nome do Autor</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary fst-italic">
+              by <%= article.user.username %>
+            </h6>
             <p class="card-text"> <%= truncate(article.description, length: 70) %></p>
             <div class="text-center">
               <%= link_to "View", article_path(article), class: "btn btn-outline-success" %>
