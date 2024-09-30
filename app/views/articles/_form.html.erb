@@ -1,27 +1,37 @@
-<%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+    <%= form_with(model: article) do |form| %>
+      <% if article.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+          <ul>
+            <% article.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="form-group row">
+        <%= form.label :title, class: "col-2 col-form-label", style: "display: block" %>
+        <div class="col-10">
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label :description, class: "col-2 col-form-label", style: "display: block" %>
+        <div class="col-10">
+          <%= form.text_area :description, rows: 10, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.submit class: "btn btn-outline-light btn-lg text-black" %>
+      </div>
+    <% end %>
+    <%= link_to "Cancel and return to articles listing", articles_path %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
   </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,54 @@
+﻿.navbar {
+  background-color: #232323 !important;
+}
+
+.nav-link{
+  color: white;
+  &:hover {
+    color: #fffabb;
+  }
+  &.active {
+    color: #a6f6e7;
+  }
+}
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+    &:hover {
+        color: #fffabb;
+        text-decoration: none;
+    }
+}
+
+#jumbo-home{
+  background-image: asset-url("jumbo-copy.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+  margin-top: 1.7em;
+}
+
+.footer{
+    background-color: #232323;
+    color: white;
+    padding: 20px 0;
+}
+
+.card-footer {
+  margin: 0;
+  background-color: #fffbf5;
+}
+
+.link-article{
+  color: #6e5c3b;
+  text-decoration: none;
+    &:hover {
+        color: #dcc44d;
+    }
+}
